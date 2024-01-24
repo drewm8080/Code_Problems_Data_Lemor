@@ -33,3 +33,110 @@ def fizz_buzz_sum(target):
       sum += i
   return sum
 ```
+
+### Intersection of Two Lists 
+```Python
+# first attempt
+def intersection(a, b):
+  new_list=[]
+  for i in a:
+    if i in b:
+      new_list.append(i)
+      
+  return new_list
+
+# second attempt
+def intersection(a, b):
+  a_set = set(a)
+  b_set = set(b)
+  final_list = a_set.intersection(b_set)
+  return list(final_list)
+  return new_list
+```
+
+### 
+
+```Python
+# first attempt:
+def missing_int(input: list[int])-> int:
+  input.sort()
+  count = 0
+  for i in input:
+    if i!= count:
+      return count
+    count+=1
+  return len(input)
+
+
+
+# second attempt:
+def missing_int(input: list[int])-> int:
+  input.sort()
+  count = 0
+  for i in range(len(input)):
+    if input[i] != i:
+      return i
+  return len(input)
+
+# problem with the above? Sorting a list has a time complexity of O(log*n)
+
+# hash set (set automatically orders)
+
+
+# better solution
+def missing_int(input: list[int])-> int:
+  set_list = set(input)
+  for i in range(len(set_list) + 1):
+    if i not in set_list:
+      return i
+
+
+```
+
+### Contains Duplicate
+```Python
+def contains_duplicate(input)-> bool:
+  set_input = set(input)
+  # doesnt contain duplicates
+  if len(set_input) == len(input):
+    return False
+  # contains duplicates
+  else:
+    return True
+
+# dictionary solution
+def contains_duplicate(input)-> bool:
+  seen_dictionary = {}
+  for i in input:
+    if i in seen_dictionary:
+      return True
+    seen_dictionary[i]=True
+  return False
+
+
+```
+
+### Inquity
+
+```Python
+def min_inequity(salaries, n):
+	salaries.sort()
+	minimum_salary = min(salaries[:n])
+	maxiumum_salary =max(salaries[:n])
+	return maxiumum_salary-minimum_salary
+```
+
+### max_profit
+```Python
+def max_subarray_sum(prices):
+  max_profit = 0
+  for i in range(len(prices)-1):
+    # seeing each number and seeing which is greater
+    for j in range(i+1,len(prices)):
+      profit = prices[j]-prices[i]
+      if profit>max_profit:
+        max_profit = profit
+  return max_profit
+
+
+```
