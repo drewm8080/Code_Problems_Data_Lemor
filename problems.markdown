@@ -140,3 +140,25 @@ def max_subarray_sum(prices):
 
 
 ```
+
+
+### Factorial Trailing Zeroes [Microsoft Python Interview Question]
+
+```Python
+def trailing_zeroes(n):
+  def factorial(n):
+    final_answer= 1
+    for i in range(1,n+1):
+      final_answer = i*final_answer
+    return final_answer 
+    
+  factorial_number = factorial(n)
+  num_zeros = 0
+  while factorial_number %10 ==0:
+    num_zeros+=1 
+    # floor division to remove each zero at the ened
+    factorial_number //=10
+  return num_zeros
+
+
+```
