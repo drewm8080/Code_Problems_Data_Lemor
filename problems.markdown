@@ -217,3 +217,24 @@ def largest_prime_factor(target):
       
 ```
 
+### smallest divisible number 
+
+
+```Python
+def smallest_multiple(target: int) -> int:
+    
+    num = 1
+    while True:
+        divisible = True
+        for i in range(1, target + 1):
+          # seeing if theres any number not divisible by i
+            if num % i != 0:
+                divisible = False
+                num += 1
+                break
+        # if it is divisible by all numbers return tartget number 
+        if divisible:
+            return num
+      
+```
+
