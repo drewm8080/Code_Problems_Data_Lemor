@@ -199,3 +199,21 @@ two_sum([1,2,3,4],7)
 2 3
 [2, 3]
 ```
+
+### Largest Prime Factor [Facebook Python Interview Question]
+
+
+```Python
+def largest_prime_factor(target):
+  smallest_prime = 2
+  # number must have a number smaller than its square root 
+  while smallest_prime*smallest_prime <= target:
+    if target % smallest_prime != 0:
+      smallest_prime+=1
+    else:
+      # keep dividing to get smallest prime
+      target = target//smallest_prime
+  return target
+      
+```
+
