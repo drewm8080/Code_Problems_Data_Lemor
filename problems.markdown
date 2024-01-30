@@ -162,3 +162,40 @@ def trailing_zeroes(n):
 
 
 ```
+
+
+### Maximum Product of Three Numbers [D.E. Shaw Python Interview Question]
+
+```Python
+def max_three(input):
+    new_list = sorted(input)
+    a = new_list[-1] * new_list[-2] * new_list[-3]
+    two_smallest_number = new_list[0] * new_list[1]
+    b = two_smallest_number * new_list[-1]
+    maximum = max(a, b)
+    return maximum
+```
+
+### Two Sum [Amazon Python Interview Question]
+
+```Python
+def two_sum(input: list[int], target: int) -> list[int]:
+  for i in range(len(input)):
+    for j in range(i+1, len(input)):
+      print(i,j)
+      if input[i]+input[j] == target:
+        return [i,j]
+  return [-1,-1]
+
+two_sum([1,2,3,4],7)
+
+# printed version
+
+0 1
+0 2
+0 3
+1 2
+1 3
+2 3
+[2, 3]
+```
