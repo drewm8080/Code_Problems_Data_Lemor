@@ -238,3 +238,23 @@ def smallest_multiple(target: int) -> int:
       
 ```
 
+### Largest Contiguous Subarray Sum [Akuna Capital Python Interview Question]
+
+
+```Python
+def max_subarray_sum(input):
+  max_value = 0
+  current_value = 0
+  for i in range(len(input)):
+    current_value += input[i]
+    # updating the max 
+    if current_value >= max_value:
+      max_value = current_value
+    # resetting at zero
+    if current_value < 0:
+      current_value = 0
+  return max_value
+```
+
+
+
